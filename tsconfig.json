@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "CommonJS",
+    "target": "ES2019",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "rootDir": "src",
+    "baseUrl": "./src",
+    "paths": {
+      "@presentation/*": ["presentation/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
+}
