@@ -17,11 +17,14 @@ export class SignUpController implements Controller {
                 return badRequest(error)
             }
 
-            const { name, email, password } = httpRequest.body
+            const { name, email, password, nick, age, firstFightingGame } = httpRequest.body
             const account = await this.addAccount.add({
                 name,
+                nick,
+                age,
                 email,
-                password
+                password,
+                firstFightingGame,
             })
 
             return success(account)
