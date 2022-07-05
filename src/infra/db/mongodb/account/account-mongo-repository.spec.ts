@@ -26,8 +26,11 @@ describe('Account Mongo Repository', () => {
         const sut = makeSut()
         const account = await sut.add({
             name: 'any_name',
+            nick: 'valid_nick',
+            age: 30,
             email: 'any_email@email.com',
             password: 'any_password',
+            firstFightingGame: 'valid_firstGame'
         })
 
         expect(account).toBeTruthy()
@@ -41,16 +44,22 @@ describe('Account Mongo Repository', () => {
         const sut = makeSut()
         await accountCollection.insertOne({
             name: 'any_name',
+            nick: 'valid_nick',
+            age: 30,
             email: 'any_email@email.com',
             password: 'any_password',
+            firstFightingGame: 'valid_firstGame'
         })
         const account = await sut.loadByEmail('any_email@email.com')
 
         expect(account).toBeTruthy()
         expect(account.id).toBeTruthy()
         expect(account.name).toBe('any_name')
+        expect(account.nick).toBe('valid_nick')
+        expect(account.age).toBe(30)
         expect(account.email).toBe('any_email@email.com')
         expect(account.password).toBe('any_password')
+        expect(account.firstFightingGame).toBe('valid_firstGame')
     })
 
     test('Should return null if loadByEmail fails', async () => {
