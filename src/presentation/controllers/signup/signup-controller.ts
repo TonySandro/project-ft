@@ -27,6 +27,7 @@ export class SignUpController implements Controller {
                 firstFightingGame,
             })
 
+            console.log("Success")
             return success(account)
         } catch (error) {
             return serverError(error)
