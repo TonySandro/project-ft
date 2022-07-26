@@ -34,8 +34,11 @@ const makeFakeRequest = (): HttpRequest => ({
 const makeFakeAccount = (): AccountModel => ({
   id: 'valid_id',
   name: 'valid_name',
+  nick: 'valid_nick',
+  age: 20,
   email: 'valid_email@mail.com',
-  password: 'valid_password'
+  password: 'valid_password',
+  firstFightingGame: 'valid_firstFightingGame'
 })
 
 const makeFakeServerError = (): HttpResponse => {
